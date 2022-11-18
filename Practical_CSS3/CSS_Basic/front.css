@@ -1,0 +1,15 @@
+h2{
+    border-bottom: 1px solid red;
+}
+p{
+    /* border-top: 1px solid red; */
+    font-family: 'BhuTuka Expanded One', cursive;
+    font-size: 25px;
+    line-height: 110px;
+    /* 1px = 1/96th of inch */
+}
+span{
+    font-weight: bold;
+    font-style: oblique;
+    color: aquamarine;
+}

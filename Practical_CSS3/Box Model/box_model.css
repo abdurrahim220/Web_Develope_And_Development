@@ -1,0 +1,28 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.ct1{
+    height: 250px;
+    border: 2px solid orange;
+    background: bisque;
+    padding: 30px 20px;
+    border-radius: 10px;
+    width: 250px;
+    margin-top: 20px;
+    box-sizing: border-box;
+    /* padding-top: 10px; /* Inside the border
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px; */
+
+    
+    /* padding: 10px 20px 30px 40px; /* top right bottom left */
+    /* padding: 20px 50px; y and x-axis  */
+    /* margin: 5px; Outside the border */
+
+    /* margin-top: 20px;
+    margin-left: 20px;
+    margin: 50px 50px;  y and x -axis*/
+} 

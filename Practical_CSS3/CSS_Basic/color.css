@@ -1,0 +1,19 @@
+#p1{
+    color: blue;
+}
+#p2{
+    color:rgb(0, 255, 255); 
+}
+
+#p3{
+    color: #0000ff;
+}
+
+.cs_Cal{
+    font-size: 22px;
+    font-style: bold;
+    font-family: 'Roboto Slab', serif;
+    font-weight: bold;
+    font-style: italic;
+    background: #999966;
+}

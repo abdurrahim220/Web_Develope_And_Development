@@ -1,0 +1,39 @@
+*{
+    box-sizing: border-box;
+}
+.container{
+    width: 700px;
+    border: 2px solid red;
+    margin: 40px auto;
+    background: chocolate;
+}
+
+.item{
+    border: 4px solid green;
+    padding: 10px 2px;
+    margin: 8px 2px;
+    background: rgb(130, 179, 179);
+}
+
+#fruit{
+    width: 48%;
+    float: left;
+}
+#S_t{
+    width: 48%;
+    float: right;
+}
+#c_p{
+    width:100%;
+    /* float: left; */
+    clear: both;
+}
+
+p,h3 {
+    text-align: justify;
+}
+h2{
+    /* text-align: center; */
+    margin: auto;
+    width: 100px;
+}
