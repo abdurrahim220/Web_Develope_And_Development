@@ -1,0 +1,35 @@
+.item{
+    border:2px solid #fc3503;
+    height: 150px;
+    width: 150px;
+    /* display: inline-block; */
+
+    border-radius: 5px;
+    margin: 5px;
+    box-sizing: border-box;
+}
+
+#item1{
+    position: relative;
+    background-color: skyblue;
+    top: 20px;
+    z-index: 7;
+
+}
+
+#item2{
+    z-index: 6; /*z-indes only work with posotion*/
+    position: relative;
+    background-color: rgb(208, 235, 135);
+    top: -20px;
+    /* visibility: hidden; */ /* visibility hidden hides the elemnent but occupies space */
+    /*display: none;   display none hide the element but removes the occupied space*/
+}
+
+#item3{
+    background-color: rgb(201, 148, 51);
+}
+
+#item4{
+    background-color: rgb(46, 22, 179);
+}

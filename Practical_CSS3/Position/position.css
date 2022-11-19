@@ -1,0 +1,42 @@
+.item{
+    border: 3px solid green;
+    width: 140px;
+    height: 140px;
+    display: inline-block;
+}
+
+.parent{
+    border: 3px solid red;
+    background: rgb(197, 89, 17);
+    /* width: 800px;
+    margin: auto; */
+    height: 2000px;
+}
+
+/* css position : static(default) ,absolte, relative ,fixed ,sticky */
+
+/* position: static will follow normla to DOM follow*/
+
+/* position: Fixded will make element fixed at certial top/bottom/left/right from browser */
+
+/* position relative allow us to move that element form its normal position */
+
+/* position: absolute wiil allow us to move that element form it's normal immediate parent */
+
+#item3{
+    /* position: relative; */
+    /* position:static; */
+    /* position: absolute;
+
+    top:50px;
+    left:50px; */
+
+    /* position: fixed;
+    bottom: 1px;
+    right: 1px; */
+
+    position: sticky;
+    /* bottom: 5px; */
+    top: 5px;
+
+}

@@ -1,0 +1,31 @@
+.top_section{
+    border: 3px solid red;
+    /* margin: auto;
+    width: 16%; */
+}
+img{
+    width: 50px;
+    height: 50px;
+    display: block;   
+    margin:auto;
+}
+h4{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+    text-align: center;
+}
+
+.warp{
+    border: 3px solid rebeccapurple;
+    background:sandybrown;
+    padding:20px;
+    margin: 5px 2px;
+    width: 30%;
+    display:inline-block;
+    box-sizing: border-box;
+}
+.container{
+    margin: auto;
+    width: 1000px;
+
+}
