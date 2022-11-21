@@ -1,0 +1,60 @@
+.item{
+    background-color: aquamarine;
+    color: black;
+    text-align: center;
+    font-size: 60px;
+    display: none;
+}
+/* opx to 300px width apply below rules */
+@media only screen and (max-width:300px)
+{
+    #item-1{
+        display: block;
+    }
+    /* #item-2{
+        display: block;
+        background-color: brown;
+    } */
+    /* #item-3{
+        display: block;
+    }
+    #item-4{
+        display: block; 
+    }*/
+}
+/* It display the element about 300 to 500px range */
+@media only screen and (min-width:300px) and (max-width:500px)
+{
+    /* #item-1{
+        display: none;
+    } */
+    #item-2{
+        display: block;
+        background-color: rgb(138, 207, 164);
+    }
+    #item-3{
+        display: block;
+        background-color: rgb(42, 180, 180);
+
+    }
+    
+}
+/* It display the element about 500 to 800px range */
+@media only screen and (min-width:500px) and (max-width:800px)
+{
+    #item-3{
+        display: block;
+        background-color: rgb(42, 180, 180);
+
+    }
+}
+
+/* It display the element about 800px to above range */
+
+@media only screen and (min-width:800px)
+{
+    #item-4{
+        display: block;
+        background-color: rgb(143, 45, 163);
+    }
+}

@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 20px;
+}
+
+.container{
+    font-size: 10px;
+    border: 3px solid blue;
+    width: 300px;
+    /* height: 600px; */
+    /* height: 50vh; */
+    height: vw;
+}
+
+#h1{
+    /* 2em = 2 * font size of the immediate parent = 20px */
+    /* font-size: 2em; */
+    /* padding: 3em; */
+}
+
+#h2{
+    /* font-size: 3rem; Calculates based on root html element 3rem = 3 * 20(html) = 60px */
+    /* padding: 3rem; Calculates based on root html element 2rem = 2 * 20(html) = 40px */
+}

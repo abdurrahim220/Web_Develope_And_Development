@@ -1,0 +1,2 @@
+->Media queries helps us to make our website responsive (adust any device)
+->on versios browser width we can change /inject our css style of different elements 
