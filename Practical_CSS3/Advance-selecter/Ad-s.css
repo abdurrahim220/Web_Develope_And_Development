@@ -1,0 +1,42 @@
+/* p{
+    background-color:chocolate;
+    color: black;
+    font-weight: bold;
+} */
+h2{
+    background-color: orange;
+    color: antiquewhite;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* below is targetting all those p tag which are any level child of li which are any level of div */
+
+/* div li p{
+    background-color: blue;
+    color: white;
+    font-size: bold;
+} */
+
+/* below is targeted all those p tag which are any level child of div */
+
+/* div p{
+    background-color:chocolate;
+    color: black;
+    font-weight: bold;
+} */
+
+/* below is targetting only thoes p tag which are dirct child of div */
+
+/* div > p{
+    background-color: blue;
+    color: white;
+    font-size: bold;
+}
+ */
+
+ /* below is targetting only those P tag which are dircet sibling of div or P is right after div*/
+
+ div + p{
+    background-color: yellow;
+ }
