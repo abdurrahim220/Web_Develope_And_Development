@@ -1,0 +1,57 @@
+body{
+    background-color: rgb(68, 64, 64);
+    color: cornsilk;
+    margin: 0;
+    padding: 0;
+    /* background: url('https://source.unsplash.com/user/erondu/1600x900') no-repeat center center/cover; */
+}
+.header::before{ /* place this pseudo element before the menu */
+    content: ""; /* Place empty content and put image to the background*/
+    background: url('https://source.unsplash.com/user/erondu/1600x900') no-repeat center center/cover;
+    position: absolute; /* align according to the document from top and left 0 0*/
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    opacity: 0.5;
+    z-index: -1; /*push the image to the background, z-index will work here becz position is set here */
+}
+.banner{
+    display: flex;
+    flex-direction: column;
+    margin: 2px 220px;
+    justify-content: center;
+    /* border: 2px solid red; */
+    height: 350px;
+    align-items: center;
+
+}
+h1{
+    font-size: 3.5rem;
+}
+/* .banner::before{
+    content: "Inserting content before banner!!";
+} */
+
+/* .banner::after{
+    content:"Inserting content after banner!!"
+} */
+
+p{
+    text-align: center;
+    font-size: 20px;
+}
+
+
+.navigation-it{
+    display: flex;
+    font-size: 18px;
+    margin: 2px 4px;
+
+}
+
+.navigation-it li{
+    list-style: none;
+    padding: 35px 20px;
+
+}
