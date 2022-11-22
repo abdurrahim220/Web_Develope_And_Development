@@ -1,0 +1,30 @@
+/* .container{
+    display: flex;
+} */
+:root{  /* Declare a global variable here */
+    --item-color:rgb(214, 170, 23);
+    --primary-color:teal;
+    --secondary-color:rgb(223, 22, 22);
+    --max-w:700px;
+}
+.item{
+    
+    width: 220px;
+    height: 220px;
+    background-color: var(--item-color);
+    padding: 20px;
+    border: 2px solid var(--secondary-color);
+    margin: 20px;
+    color: white;
+    box-shadow: 5px 5px var(--secondary-color);
+}
+
+.container{
+    display: flex;
+    background-color: var(--primary-color);
+    max-width: var(--max-w);
+    /* justify-self: unset; */
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
