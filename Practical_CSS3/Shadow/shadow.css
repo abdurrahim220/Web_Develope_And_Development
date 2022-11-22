@@ -1,0 +1,39 @@
+.container{
+    display: flex;
+    /* width: 600px; */
+    margin: auto;
+    /* border: 2px solid rosybrown; */
+    align-items: center;
+    justify-content: center;
+}
+
+.card{
+    padding: 25px 12px; /* y=25 and x= 12*/
+    /* border: 2px solid salmon; */
+    margin: 25px 12px;
+    background-color: antiquewhite;
+    /* box-shadow: 6px 6px skyblue; */
+}
+
+
+/* y-axic x-axic blurr-radious spared- radious color */
+.card-bottom{
+    /* box-shadow: 6px 6px skyblue; */
+
+    /* alpha = how dark the color should be */
+    
+    /* box-shadow: 8px 8px 8px rgba(70, 170, 170, 0.4); shadow on bottom outside*/ 
+    box-shadow: inset 8px 8px 8px rgba(70, 170, 170, 0.4);/* shadow on bottom inside */
+}
+
+.card-top{
+    box-shadow: -6px -6px 10px 9px skyblue;
+
+    /*  */
+    box-shadow: 15px 10px blue;
+}
+
+.card h2{
+    text-shadow: 5px 5px rgb(161, 118, 24);
+}
+
