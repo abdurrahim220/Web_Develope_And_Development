@@ -1,8 +1,8 @@
 //while loop
 
-var i = 1; // initialization
+// var i = 1; //?initialization
 
-while(i<=5) //condition
+while(i<=5) //!condition
 {
     console.log(i);
     i++; //update
