@@ -1,0 +1,56 @@
+.container-clock{
+    background: url(./png-clipart-clock-position-clock-face-digital-clock-clock.png) no-repeat;
+    /* background-color: red; */
+    width: 60vh;
+    height: 51vh;
+    /* box-sizing: border-box; */
+    background-size: 100%;
+    border: 3px solid red;
+    margin: auto;
+    position: relative;
+}
+
+#hour ,#minute ,#second {
+    position: absolute;
+    border-radius: 10px;
+    background: black;
+    transform-origin: bottom;
+}
+
+/* .cr{
+    width: 10px;
+    height: 10px;
+    background-color:black;
+    border-radius: 3px solid black;
+    /* left: 50%;
+    top: 50%; 
+    align-items: center;
+} */
+
+#hour{
+    width: 1%;
+    height: 35%;
+    top: 16%;
+    left: 49.5%;
+    /* display: none; */
+    opacity: 0.8;
+
+}
+
+#minute {
+    width: 1%;
+    height: 38%;
+    top: 12.8%;
+    left: 49.5%;
+    /* display: none; */
+    opacity: 0.8;
+}
+
+#second{
+    width: 1%;
+    height: 40%;
+    top: 10.5%;
+    left: 49.5%;
+    /* display: none; */
+    opacity: 0.8;
+}
