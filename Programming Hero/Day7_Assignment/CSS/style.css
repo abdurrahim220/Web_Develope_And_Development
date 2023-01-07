@@ -47,16 +47,37 @@
     display: flex;
 }
 
-.body-img {
-    margin-left: 150px;
+.section-header {
+    margin-top: 350px;
+    width: 300px;
+    font-size: 35px;
+    color: #151414;
+    margin-left: 200px;
+    padding: 10px;
+    font-weight: 700;
+}
 
+.body-img {
+    margin-left: 130px;
+    margin-top: 100px;
+}
+
+.section-description {
+    width: 350px;
+    padding: 10px;
+    margin-left: 200px;
+}
+
+.list-item {
+    margin-left: 200px;
+    padding: 8px 38px;
 }
 
 /* My plan section style */
 
 .plans-container {
     display: flex;
-    gap: 24px;
+    /* gap: 40px; */
 }
 
 .plan-title {
@@ -67,6 +88,7 @@
     text-align: center;
     line-height: 47px;
     color: #151414;
+    padding: 10px;
 }
 
 .plans-container {
@@ -74,11 +96,40 @@
 
 }
 
+.plans {
+    padding: 0 90px;
+    margin-left: 60px;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+
+}
+
+.section-img-title {
+    padding: 15px;
+    width: 500px;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 35px;
+
+}
+
+.btn-primary1 {
+    background: white;
+    border-radius: 5px;
+    color: #FD6E0A;
+    border: 0;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 15px 30px;
+    margin-left: 15px;
+}
+
 /* section img style */
 .section-img {
     background-image: url('../images/watch.png');
     background-repeat: no-repeat;
-    background: linear-gradient(45deg, #F15B22 15%, rgba(241, 91, 34, 0) 100%);
+    background: linear-gradient(45deg, hsl(17, 85%, 43%) 15%, rgba(216, 73, 17, 0) 100%);
     border-radius: 8px;
     margin-left: 100px;
     margin-right: 100px;
@@ -96,12 +147,17 @@
     gap: 24px;
 }
 
+.what-i-do {
+    padding: 60px;
+}
+
 .section-title {
     font-weight: 700;
     font-size: 40px;
     margin-top: 30px;
     margin-bottom: 20px;
     text-align: center;
+    padding: 20px;
 
 }
 
@@ -119,10 +175,13 @@
 
 
 /* footer contact style */
+
+
 .contact {
     display: flex;
     background-color: #151414;
     gap: 50px;
+    padding: 100px;
 }
 
 .contact-title,
@@ -131,6 +190,55 @@
     color: #F8F8F8;
 }
 
-a {
-    text-decoration: none;
+.contact-description {
+    font-weight: 700;
+    width: 500px;
+    margin-left: 85px;
+    padding: 10px;
+
+}
+
+.contact-title {
+    margin-left: 80px;
+    font-size: 35px;
+    padding: 10px;
+}
+
+.contact-info {
+    margin-left: 80px;
+    padding: 10px;
+}
+
+.icons {
+    margin-left: 80px;
+    padding: 10px;
+}
+
+.contact-title1{
+    margin-left: 100px;
+    font-size: 25px;
+    padding: 10px;
+    color: #F8F8F8;
+}
+
+input {
+    display: block;
+    padding: 10px 10px;
+    margin-left: 100px;
+}
+.form
+{
+    padding: 20px;
+}
+
+.btn-primary2 {
+    background: white;
+    border-radius: 5px;
+    color: #FD6E0A;
+    border: 0;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 15px 25px;
+    padding-bottom: 10px;
+    margin-left: 100px;
 }
