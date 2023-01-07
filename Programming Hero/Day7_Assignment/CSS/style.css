@@ -1,28 +1,35 @@
-*{
+* {
     margin: 0;
     font-family: 'Work Sans', sans-serif;
 }
 
 /* banner styling */
-.banner-img{
+.banner-img {
     background-image: url('../images/banner/banner1.png');
     width: 100wv;
     height: 100vh;
     background-size: cover;
 
 }
-.banner-title{
-   font-size: 25px;
+
+.banner-title {
+    font-size: 45px;
     font-weight: 700;
-    color: #151414;    
+    color: #151414;
     text-align: right;
-    margin-top: 216px;
-    margin-right: 230px;
-    border-radius: 0 3px;
+    margin-left: 700px;
+    padding: 10px;
+    width: 481px;
+}
+
+.banner-description {
+    width: 400px;
+    text-align: right;
+    margin-left: 778px;
     padding: 10px;
 }
 
-.btn-primary{
+.btn-primary {
     background: #FD6E0A;
     border-radius: 5px;
     color: #FFFFFF;
@@ -30,23 +37,24 @@
     font-weight: 700;
     border: 0;
     padding: 15px 30px;
+    margin-left: 1023px;
 }
 
 
 /* main sectin */
 
-.section1{
+.section1 {
     display: flex;
 }
 
-.body-img{
+.body-img {
     margin-left: 150px;
 
 }
 
 /* My plan section style */
 
-.plans-container{
+.plans-container {
     display: flex;
     gap: 24px;
 }
@@ -61,12 +69,13 @@
     color: #151414;
 }
 
-.plans-container{
+.plans-container {
     align-items: center;
 
 }
+
 /* section img style */
-.section-img{
+.section-img {
     background-image: url('../images/watch.png');
     background-repeat: no-repeat;
     background: linear-gradient(45deg, #F15B22 15%, rgba(241, 91, 34, 0) 100%);
@@ -110,16 +119,18 @@
 
 
 /* footer contact style */
-.contact{
+.contact {
     display: flex;
     background-color: #151414;
     gap: 50px;
 }
 
-.contact-title , .contact-description ,.contact-info{
+.contact-title,
+.contact-description,
+.contact-info {
     color: #F8F8F8;
 }
 
-a{
+a {
     text-decoration: none;
 }
