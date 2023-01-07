@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    font-family: 'Work Sans', sans-serif;
+}
+
+/* banner styling */
+.banner-img{
+    background-image: url('../images/banner/banner1.png');
+    width: 100wv;
+    height: 100vh;
+    background-size: cover;
+
+}
+.banner-title{
+   font-size: 25px;
+    font-weight: 700;
+    color: #151414;    
+    text-align: right;
+    margin-top: 216px;
+    margin-right: 230px;
+    border-radius: 0 3px;
+    padding: 10px;
+}
+
+.btn-primary{
+    background: #FD6E0A;
+    border-radius: 5px;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 700;
+    border: 0;
+    padding: 15px 30px;
+}
+
+
+/* main sectin */
+
+.body-img{
+    margin-left: 216px;
+
+}
+
+/* My plan section style */
+
+.plans-container{
+    display: flex;
+    gap: 24px;
+}
+
+.plan-title {
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+div .plans{
+    align-items: center;
+
+}
+/* section img style */
+.section-img{
+    background-image: url('../images/watch.png');
+    background-repeat: no-repeat;
+    background: linear-gradient(90deg, #F15B22 0%, rgba(241, 91, 34, 0) 100%);
+    border-radius: 8px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 50px 30px;
+
+}
+
+.section-img-title{
+
+}
+
+/* contact style */
+.contact{
+    display: flex;
+    background-color: #151414;
+    gap: 50px;
+}
+
+.contact-title , .contact-description ,.contact-info{
+    color: #F8F8F8;
+}
