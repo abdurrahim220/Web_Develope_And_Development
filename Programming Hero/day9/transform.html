@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container ,.inner{
+            width: 150px;
+            height: 150px;
+            border: 2px solid khaki;
+        }
+        .container{
+            background-color: lightblue;
+        }
+        .inner{
+            background-color: lightcoral;
+            transform: scale(.75);
+            transform: rotate(45deg);
+
+            /* using multiple transform */
+
+            transform: translate(50px) rotate(45deg) scale(.5);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>
+        Transformer i am comming
+    </h1>
+
+    <div class="box container">
+        <div class="inner">Box1</div>
+    </div>
+    <div class="box container">
+        <div class="inner">Box2</div>
+    </div>
+    <div class="box container">
+        <div class="inner">Box3</div>
+    </div>
+
+</body>
+
+</html>
