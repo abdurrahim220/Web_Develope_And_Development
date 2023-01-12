@@ -1,0 +1,81 @@
+/* define grid area| */
+
+.header {
+    grid-area: header;
+}
+
+.nav {
+    grid-area: nav;
+}
+
+.main {
+    grid-area: main;
+}
+
+.article {
+    grid-area: article;
+}
+
+.aside {
+    grid-area: aside;
+}
+
+.ad {
+    grid-area: ad;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+/* grid layout related styles*/
+
+.header,
+.nav,
+.main,
+.ad,
+.aside,
+.footer {
+    background-color: teal;
+}
+
+.grid-container {
+
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-areas:
+        "header header header header"
+        "nav    main    main    aside"
+        "nav    main    main    ad"
+        "footer footer footer footer"
+    ;
+}
+
+/* Responsive */
+
+@media screen and (max-width:576px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "nav"
+            "main"
+            "aside"
+            "ad"
+            "footer"
+        ;
+    }
+}
+
+@media screen and (min-width: 577px) and (max-width:992px) {
+    .grid-container {
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas:
+            "header"
+            "nav"
+            "aside main"
+            "ad footer"
+        ;
+    }
+}
