@@ -78,7 +78,7 @@ const myObj2 = {
 
 for (let i in myObj2.cars)
 {
-    console.log(myObj2.cars[i]);
+    console.log(myObj2.cars[i].name);
     for(let j in myObj2.cars[i].models){
         console.log(myObj2.cars[i].models[j])
     }
