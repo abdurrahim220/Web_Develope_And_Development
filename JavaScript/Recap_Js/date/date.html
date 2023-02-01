@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>date Method</title>
+</head>
+<body>
+    <p id="date1"></p>
+    <p id="date2"></p>
+    <p id="date3"></p>
+    <p id="date4"></p>
+    <p id="date5"></p>
+    <p id="demo"></p>
+
+
+    <script>
+        // new date formate
+        const d1= new Date();
+        document.getElementById("date1").innerHTML=d1.toISOString();
+        // using new date String 
+        const d2 = new Date("October 12,2022 11:30:56");
+        document.getElementById("date2").innerHTML=d2.toDateString();
+
+        // get year
+        const year = new Date(2018,11,7,30,45,30,0);
+        document.getElementById("date4").innerHTML=year;
+        // get millisecond
+
+        const mile_s = new Date(1000000000000);
+        document.getElementById("date5").innerHTML = mile_s.toUTCString();
+       
+    </script>
+</body>
+</html>
