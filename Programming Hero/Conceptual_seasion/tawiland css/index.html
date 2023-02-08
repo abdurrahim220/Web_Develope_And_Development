@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                    //   fontFamily :{
+                    //     font-bebas: ['Bebas Neue', "cursive"]
+                    //   }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <nav class="bg-white h-20 fixed top-0 right-0 left-0">
+        <div class="flex justify-between items-center h-20 mx-auto  w-full max-w-7xl font-bebas px-5">
+            <h1 class="text-2xl">Jhaka naka production</h1>
+            <ul class="flex text-lg gap-8">
+                <li>About us</li>
+                <li>Out movies</li>
+                <li>services</li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- main header  -->
+
+    <section class="bg-red-500 h-screen p-20 bg-[url('bg-img.jpg')] bg-cover">
+        <div class="h-full w-full max-w-7xl mx-auto px-5 flex items-center text-white ">
+            <div class="">
+                <h2 class="text-lg">Movies Production</h2>
+                <h1 class="text-7xl">Film made</h1>
+                <h1 class="text-7xl text-yellow-200">Perfection</h1>
+                <p class="max-w-lg font-medium mb-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos,
+                    accusantium? Accusamus delectus
+                    exercitationem eligendi quam.</p>
+
+                <button
+                    class="py-2 px-3 border-2 border-white text-lg hover:bg-yellow-200 hover:border-yellow-200 transation-all">DISCOVER
+                    MORE</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- about us -->
+    <section class="py-40">
+        <div class="border-2 border-black w-full max-w-7xl mx-auto flex p-5 ">
+   
+            <div class="w-1/2 bg-green-500">
+
+            </div>
+            <div class="w-1/2 bg-red-500">
+                <h1>filming Experience</h1>
+                <h1>Just Got Better</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, voluptates. Provident nobis nihil nostrum quisquam veniam delectus excepturi laboriosam modi illum voluptas consequuntur, earum ut dicta, ipsa, consectetur sit veritatis!</p>
+                <button class="">DISCOVER More</button>
+
+            </div>
+        </div>
+        <div>
+
+        </div>
+    </section>
+
+</body>
+
+</html>
