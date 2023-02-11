@@ -1,3 +1,15 @@
 h1{
-    color:orange;
+    color:lightcoral;
+}
+
+.yellow-bg{
+    background-color: yellowgreen !important;
+    /* text-align: center; */
+}
+
+.large-text{
+    font-size: 2em;
+}
+.text-align{
+    text-align: center;
 }

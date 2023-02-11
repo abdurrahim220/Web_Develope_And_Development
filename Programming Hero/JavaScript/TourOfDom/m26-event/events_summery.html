@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DOM Events Summery</title>
+</head>
+
+<body>
+
+    <h1>Final Dom Handler</h1>
+    <h3 id="handler-status">Default Text</h3>
+    <p id="input-text-field">Default input text</p>
+    <input id="input-field" type="text">
+    <button id="btn-update">Update</button>
+    <br><br>
+    <button onclick="handOnClick()">Handle event by on click function</button>
+    <button id="event-listener">Handled by addEventListener</button>
+
+    <!-- js File -->
+    <script src="js/e_sm.js"></script>
+    <script>
+        handOnClick = () => {
+            // document.body. 
+            // console.log('Button Clicked');
+            const handStatus = document.getElementById('handler-status');
+            handStatus.innerText = 'Handled by function attached on onClick attribute';
+        }
+        /*
+         function handOnClick(){
+            // document.body. 
+            console.log('Button Clicked');
+        }
+        */
+        //    option 2
+        document.getElementById('event-listener').addEventListener('click', function () {
+            const handlerStatus = document.getElementById('handler-status');
+            handlerStatus.innerText = 'Text updated by eventListener!!';
+        })
+
+
+        // option 2 recap
+
+        document.getElementById('btn-update').addEventListener('click', function () {
+            const inputField = document.getElementById('input-field');
+            // console.log(inputField.value);
+
+            const inputText = inputField.value;
+            const p = document.getElementById('input-text-field');
+            p.innerText = inputText;
+
+        })
+    </script>
+</body>
+
+</html>
