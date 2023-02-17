@@ -1,5 +1,7 @@
 // for first Card
+let serial = 0;
 document.getElementById("first-card").addEventListener('click', function (e) {
+    serial += 1;
     const productName = document.getElementById("first-name").innerText;
     // console.log(firstElement.innerText);
     // get the data from htm using id
@@ -75,6 +77,8 @@ document.getElementById('last-card').addEventListener('click',function(){
     const pP = document.getElementById('first-value').value;
     const pQ = document.getElementById('last-value').value;
 
+    // if()
+
     const sT = parseInt(pP) % parseInt(pQ);
 
     displayData(pN,pP,pQ,sT);
@@ -89,7 +93,7 @@ function displayData(productName,productPrice,productQuantity,priceTotal) {
     const container = document.getElementById('table-container');
     const tr = document.createElement('tr');
     tr.innerHTML = `
-    <td>${1}</td>
+    <td>${serial}</td>
     <td>${productName}</td>
     <td>${productPrice}</td>
     <td>${productQuantity}</td>
