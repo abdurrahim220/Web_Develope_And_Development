@@ -48,6 +48,7 @@ const displayPhones = (phones, dataLimit) => {
                 <div class="card-body">
                     <h5 class="card-title">${phone.phone_name}</h5>
                     <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <button onclick="loadPhoneDetails('${phone.slug}')" href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#phoneDetailModal">Show Details</button>
                 </div>
                 </div>
             </div>
@@ -57,8 +58,28 @@ const displayPhones = (phones, dataLimit) => {
     // stop loader
     toggleSpiner(false);
 
-}
+};
 
+
+// details button to show modal navbar
+const loadPhoneDetails = async (id) => {
+    const url = ` https://openapi.programming-hero.com/api/phone/${id}`
+
+    const res = await fetch(url)
+    const data = await res.json()
+    displayPhonesDetails(data.data)
+};
+// phone details showing to navbar modal
+
+const displayPhonesDetails = phone => {
+    console.log(phone)
+
+    const modalTitle= document.getElementById('phoneDetailModalLabel');
+    modalTitle.innerText= phone.name;
+    document.getElementById('phone-dob').innerHTML = `
+    <p>Release Date: ${phone.releaseDate ? phone.releaseDate : "No release Date Found!!"}</p>
+    <p>Others : ${phone.others ? phone.others.Bluetooth : "no Other details avaiable"}</p>
+    `}
 const processSearch = (dataLimit) => {
     toggleSpiner(true);
     const searchField = document.getElementById('search-field');
@@ -66,7 +87,7 @@ const processSearch = (dataLimit) => {
     loadPhones(searchText, dataLimit)
 }
 
-// hangle search btn click
+// handle search btn click
 document.getElementById('btn-search').addEventListener('click', function () {
     // start loader
     // toggleSpiner(true);
@@ -76,6 +97,11 @@ document.getElementById('btn-search').addEventListener('click', function () {
     processSearch(10);
 });
 
+document.getElementById('search-field').addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+        processSearch(10);
+    }
+})
 
 const toggleSpiner = isLoading => {
     const LoaderSection = document.getElementById('loader');
@@ -99,6 +125,8 @@ document.getElementById('btn-show-all').addEventListener('click', function () {
     // const searchText = searchField.value;
     // loadPhones(searchText)
     processSearch();
-})
+});
+
+
 
 // loadPhones();
