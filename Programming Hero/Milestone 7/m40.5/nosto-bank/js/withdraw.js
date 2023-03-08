@@ -10,11 +10,29 @@
 */
 
 document.getElementById("btn-withdraw").addEventListener("click", function () {
-  const newWithdrawAmount = getInputFieldValueById("withdraw-field");
-  const previousWithdrawTotal = getTextElementValueById("withdraw-total ");
+  const oldWithdrawAmount = document.getElementById("withdraw-field");
+  const newWithdrawTotalString = oldWithdrawAmount.value ;
+  const newWithdrawAmount = parseFloat(newWithdrawTotalString);
+  oldWithdrawAmount.value = '';
+
+  // withdraw section
+  const oldWithdrawTotal = document.getElementById("withdraw-total");
+  const previousWithdrawTotalString = oldWithdrawTotal.innerText;
+const previousWithdrawTotal = parseFloat(previousWithdrawTotalString);
+
   const newWithdrawTotal = previousWithdrawTotal + newWithdrawAmount;
-  setTextElementValueById(withdraw - total, newWithdrawTotal);
-  const previousBalanceTotal = getTextElementValueById("balance-total");
+  oldWithdrawTotal.innerText = newWithdrawTotal; // push to old one
+
+
+  // setTextElementValueById(withdraw - total, newWithdrawTotal);
+  const oldBalanceTotal = document.getElementById("balance-total");
+  // const oldBalanceTotal = getTextElementValueById("balance-total");
+  const previousBalanceTotalString = oldBalanceTotal.innerText;
+  const previousBalanceTotal = parseFloat(previousBalanceTotalString)
+
+
   const newBalanceTotal = previousBalanceTotal - newWithdrawAmount;
-  setTextElementValueById("balance-total", newBalanceTotal);
+  oldBalanceTotal.innerText=newBalanceTotal;
+
+  // setTextElementValueById("balance-total", newBalanceTotal);
 });
