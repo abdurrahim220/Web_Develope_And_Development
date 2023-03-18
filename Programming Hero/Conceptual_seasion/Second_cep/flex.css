@@ -1,0 +1,45 @@
+.test{
+    cursor: pointer;
+    /* cursor: wait;
+     */
+     /* cursor: url(); */
+}
+
+.parent{
+    display: flex;
+    gap: 5px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 60vh;
+    flex-wrap: wrap;
+    
+}
+
+
+.child1{
+    padding: 50px;
+    background: green;
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+    order: 3;
+    flex-grow: 3;
+}
+.child2{
+    padding: 50px;
+    background: red;
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+    order: 2;
+    flex-grow: 2;
+}
+.child3{
+    padding: 50px;
+    background:blue;
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+}
