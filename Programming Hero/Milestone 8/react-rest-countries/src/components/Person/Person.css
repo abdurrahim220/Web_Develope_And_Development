@@ -1,0 +1,10 @@
+
+h1{
+    color: red;
+    padding: 10px;
+    border: 2px solid rgb(60, 185, 10);
+    box-sizing: border-box;
+    width: 400px;  
+    margin: 0 auto;
+    border-radius: 10px;
+}
