@@ -3,7 +3,7 @@ import './Country.css'
 
 const Country = (props) => {
     console.log(props.country); //showing output
-    const { area, region, population, name,flags } = props.country; //object destructuring
+    const { area, region, population, name, flags } = props.country; //object destructuring
     return (
         <div className='country'>
             <h2>Country Name: {name.common}</h2>
@@ -18,12 +18,8 @@ const Country = (props) => {
             <p>Area : {props.country.area}</p>
             <p>Region : {props.country.region}</p> */}
 
+            {props.border ? (props.border.slice(0, 2).map(item => <li>{item}</li>)) : ''}
 
-            <p className='border'>Borders:
-                <ul>
-                    {props?.border?.map(item => <li>{item}</li>)}
-                </ul>
-            </p>
         </div>
     );
 };

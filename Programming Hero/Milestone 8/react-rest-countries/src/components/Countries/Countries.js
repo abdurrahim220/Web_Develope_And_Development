@@ -11,7 +11,7 @@ const Countries = () => {
 
     return (
         <div className="App">
-            <h1>Hello Galo mello  From Countries : {countries.length}</h1>
+            <h3>Hello Galo mello  From Countries : {countries.length}</h3>
             <div className='countries-container'>
                 {
                     countries.map(country =>

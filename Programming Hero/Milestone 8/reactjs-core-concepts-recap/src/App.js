@@ -5,9 +5,9 @@ import { useEffect, useState } from 'react';
 function App() {
   return (
     <div className="App">
-      {/* <District name="Dhaka" specialty='overpopulated'></District>
-      <District name="Rajshahi" specialty="Clean"></District> */}
-      <LoadPost></LoadPost>
+      <District name="Dhaka" specialty='overpopulated'></District>
+      <District name="Rajshahi" specialty="Clean"></District>
+      {/* <LoadPost></LoadPost> */}
     </div>
   );
 }
@@ -25,7 +25,7 @@ function LoadPost() {
     <div>
       <h1>Post : {posts.length}</h1>
       {
-        posts.map(post => <Post post={post} userId={post.userId}></Post>)
+        posts.map(post => <Post post={post}></Post>)
       }
     </div>
   )
@@ -33,7 +33,7 @@ function LoadPost() {
 
 
 function Post(props) {
-  const [title,body,id] = [props.post]
+  const {title,body,id} = props.post
   return (
     <div>
       <h4>Post : {title}</h4>
