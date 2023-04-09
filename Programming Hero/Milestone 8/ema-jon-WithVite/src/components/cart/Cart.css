@@ -8,3 +8,15 @@
 .cart p{
     font-size: 20px !important;
 }
+
+.btn-clear-cart{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 10px auto;
+    background: #FF3030;
+    color: white;
+    height: 56px;
+    align-items: center;
+
+}

@@ -3,6 +3,7 @@ import Cart from '../cart/Cart';
 import Product from '../product/Product';
 import './Shop.css'
 import { addToDb, getShoppingCart } from '../utilities/fakedb';
+import { Link } from 'react-router-dom';
 
 
 
@@ -69,6 +70,7 @@ const Shop = () => {
                 {/* <h3>Product Summery</h3>
                 <p>Selected Item : {cart.length}</p> */}
                 <Cart cart={cart}></Cart>
+                <Link to='/orders'><button className='btn-proceed'>Review Order</button></Link>
             </div>
         </div>
     );
