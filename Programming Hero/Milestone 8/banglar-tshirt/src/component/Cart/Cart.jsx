@@ -1,4 +1,5 @@
 import React from 'react';
+import './Cart.css'
 
 const Cart = ({ cart, handleRemoveFormCart }) => {
     let message;
@@ -13,9 +14,9 @@ const Cart = ({ cart, handleRemoveFormCart }) => {
     }
     return (
         <div>
-            <h2>Order Summary: {cart.length}</h2>
+            <h2 className={cart.length === 1 ? 'blue' : 'red'}>Order Summary: {cart.length}</h2>
             {cart.length > 2
-                ? <span>Aro Kino</span>
+                ? <span className='purple'>Aro Kino</span>
                 : <span>Fokira</span>
             }
             {
@@ -47,7 +48,8 @@ export default Cart;
 
 /*
 conditional css class
-
+1/ use ternary 
+2. ternary inside template string
 
 
 
