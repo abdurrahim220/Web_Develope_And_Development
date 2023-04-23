@@ -29,10 +29,12 @@ const Register = () => {
         })
         .catch(error =>{
             setError(error.message);
-        })
+        })     
+    };
 
-       
-    }
+   
+
+
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col ">
@@ -68,6 +70,7 @@ const Register = () => {
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Register</button>
                         </div>
+                       
                     </div>
                 </form>
             </div>
