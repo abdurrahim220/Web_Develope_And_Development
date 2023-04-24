@@ -1,10 +1,19 @@
 import React from 'react';
+import './Login.css'
 
 const Login = () => {
     return (
-        <div>
-            <h2>Login coming sooon</h2>
-        </div>
+        <div className='container'>
+            <div className='form-container'>
+                <h2 className='form-title'>Login</h2>
+                <form>
+                    <div className="form-control">
+                        <label htmlFor="">Email</label>
+                        <input type="email" name="email" id="" required placeholder='email' />
+                    </div>
+                </form>
+            </div></div>
+
     );
 };
 
