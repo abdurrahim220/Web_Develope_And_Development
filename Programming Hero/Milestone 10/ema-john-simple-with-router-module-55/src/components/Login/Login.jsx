@@ -23,6 +23,8 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 const loginUser = result.user;
+
+                
                 console.log(loginUser);
                 form.reset();
                 navigate(from, { replace: true });
