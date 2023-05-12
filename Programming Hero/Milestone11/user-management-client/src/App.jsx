@@ -36,7 +36,14 @@ function App() {
       body: JSON.stringify(user)
     })
       .then(res => res.json())
-      .then(data => console.log('inside post response',data))
+      .then(data => {
+        console.log(data);
+        const newUser = [...users,data];
+        setUsers(newUser)
+        form.reset();
+      })
+
+
   }
 
 
