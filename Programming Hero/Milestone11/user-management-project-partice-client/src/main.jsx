@@ -7,15 +7,20 @@ import {
 } from "react-router-dom";
 import "./index.css";
 import AddUser from './component/AddUser.jsx';
+import UpdateInfo from './component/UpdateInfo.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
+    loader:()=>fetch('http://localhost:5000/userInfo')
   },
   {
     path:'/userinfo',
     element:<AddUser></AddUser>
+  },{
+    path:'/updateInfo/:id',
+    element:<UpdateInfo></UpdateInfo>
   }
 ]);
 

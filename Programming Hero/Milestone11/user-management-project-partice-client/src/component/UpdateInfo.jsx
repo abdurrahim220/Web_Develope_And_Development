@@ -1,9 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import Swal from 'sweetalert2';
+import { Link, useParams } from 'react-router-dom';
 
-const AddUser = () => {
+const UpdateInfo = () => {
+
+    const params = useParams()
+    console.log(params);
     const handleSubmit = (event) => {
+
         event.preventDefault();
         const form = event.target;
         const name = form.name.value;
@@ -15,8 +18,8 @@ const AddUser = () => {
         console.log(userInfo);
 
         // send userInfo to server 
-        fetch(`http://localhost:5000/userInfo`, {
-            method: 'POST',
+        fetch(`http://localhost:5000/userInfo/${params.id}`, {
+            method: 'PUT',
             headers: {
                 'content-type': 'application/json'
             },
@@ -34,7 +37,7 @@ const AddUser = () => {
     return (
         <div className='m-auto text-center'>
             <Link to='/'>Go Back</Link>
-            <h1 className='text-3xl font-extrabold'>New User</h1>
+            <h1 className='text-3xl font-extrabold'>Update User</h1>
 
 
             <form className='m-auto items-center' onSubmit={handleSubmit}>
@@ -70,7 +73,8 @@ const AddUser = () => {
 
             </form>
         </div>
-    );
+    )
+
 };
 
-export default AddUser;
+export default UpdateInfo;
