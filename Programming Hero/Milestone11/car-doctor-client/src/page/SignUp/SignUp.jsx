@@ -4,9 +4,10 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 
 
-const SignUp = () => {
+const SignUp = ({ children }) => {
 
     const { createUser } = useContext(AuthContext);
+
     const handleSingUp = (event) => {
         event.preventDefault();
         const form = event.target;
