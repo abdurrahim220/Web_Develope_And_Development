@@ -5,6 +5,8 @@ import 'react-tabs/style/react-tabs.css';
 import orderCover from '../../../assets/shop/banner2.jpg'
 import Cover from '../../Shared/Cover/Cover';
 import useMenu from '../../../hooks/useMenu';
+import FoodCard from '../../../component/FoodCard/FoodCard';
+import OrderTab from '../OrderTab/OrderTab';
 
 const Order = () => {
     const [tabIndex, setTabIndex] = useState(0);
@@ -27,11 +29,35 @@ const Order = () => {
                     <Tab>Drinks</Tab>
 
                 </TabList>
-                <TabPanel></TabPanel>
-                <TabPanel></TabPanel>
-                <TabPanel></TabPanel>
-                <TabPanel></TabPanel>
-                <TabPanel></TabPanel>
+
+                {/* <TabPanel>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-5 my-5">
+                        {
+                            salad.map(item => <FoodCard
+                                key={item._id}
+                                item={item}
+                            ></FoodCard>)
+                        }
+                    </div>
+                </TabPanel> */}
+
+                <TabPanel>
+                    <OrderTab item={salad}></OrderTab>
+                </TabPanel>
+                <TabPanel>
+                    <OrderTab item={pizza}></OrderTab>
+                </TabPanel>
+                <TabPanel>
+                    <OrderTab item={soup}></OrderTab>
+                </TabPanel>
+                <TabPanel>
+                    <OrderTab item={dessert}></OrderTab>
+                </TabPanel>
+                <TabPanel>
+                    <OrderTab item={offered}></OrderTab>
+                </TabPanel>
+
+                
             </Tabs>
 
         </div>
