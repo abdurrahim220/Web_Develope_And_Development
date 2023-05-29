@@ -1,12 +1,13 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect,  useState } from 'react';
 import { loadCaptchaEnginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
 import { AuthContext } from '../../providers/AuthProvider';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 
 const Login = () => {
 
-    const captchaRef = useRef(null);
+    
     const [disable, setDisabled] = useState(true);
     const {signIn} = useContext(AuthContext)
 
@@ -24,14 +25,23 @@ const Login = () => {
         .then(result =>{
             const user = result.user;
             console.log(user);
+            Swal.fire({
+                title: 'User login Successfully',
+                showClass: {
+                  popup: 'animate__animated animate__fadeInDown'
+                },
+                hideClass: {
+                  popup: 'animate__animated animate__fadeOutUp'
+                }
+              })
         })
         .catch(error =>{
             console.log(error);
         })
     }
 
-    const handleValidateCaptcha = () => {
-        const user_captcha_value = captchaRef.current.value;
+    const handleValidateCaptcha = (e) => {
+        const user_captcha_value = e.target.value;
         // console.log(captcha);
         if (validateCaptcha(user_captcha_value) == true) {
             setDisabled(false);
@@ -71,8 +81,8 @@ const Login = () => {
                             <label className="label">
                                 <LoadCanvasTemplate />
                             </label>
-                            <input type="text" ref={captchaRef} name='captcha' placeholder="Type the above captcha" className="input input-bordered" />
-                            <button onClick={handleValidateCaptcha} className="btn btn-xs mt-2">Validate</button>
+                            <input type="text" onBlur={handleValidateCaptcha} name='captcha' placeholder="Type the above captcha" className="input input-bordered" />
+                            <button  className="btn btn-xs mt-2">Validate</button>
 
 
                         </div>
