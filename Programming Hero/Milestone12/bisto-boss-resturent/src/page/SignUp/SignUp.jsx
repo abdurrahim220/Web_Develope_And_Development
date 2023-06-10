@@ -6,14 +6,16 @@ import Swal from 'sweetalert2';
 
 const SignUp = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
-    const { createUser, updateUserProfile } = useContext(AuthContext)
+    const { createUser, updateUserProfile } = useContext(AuthContext);
     const onSubmit = data => {
         console.log(data);
 
         createUser(data.email, data.password)
             .then(result => {
                 const loggedUser = result.user;
+                
                 console.log(loggedUser);
+
                 updateUserProfile(data.name, data.photoURL)
                     .then(() => {
                         console.log("Update Profile user info");
