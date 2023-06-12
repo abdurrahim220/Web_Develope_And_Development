@@ -10,10 +10,6 @@ app.use(express.json())
 
 
 
-
-
-
-
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.hncbqqn.mongodb.net/?retryWrites=true&w=majority`;
 
@@ -33,15 +29,52 @@ async function run() {
 
 
     const menuCollection = client.db('bistroDB').collection('menu');
+
     const reviewCollections = client.db('bistroDB').collection('reviews');
 
-    app.get('/menu',async(req,res)=>{
-        const result = await menuCollection.find().toArray();
-        res.send(result)
+    //? to store shopping details or browse details
+    const cartCollections = client.db('bistroDB').collection('cart');
+
+    app.get('/menu', async (req, res) => {
+      const result = await menuCollection.find().toArray();
+      res.send(result)
     })
-    app.get('/reviews',async(req,res)=>{
-        const result = await reviewCollections.find().toArray();
+    app.get('/reviews', async (req, res) => {
+      const result = await reviewCollections.find().toArray();
+      res.send(result)
+    })
+
+
+    // ! cart collection
+    app.post('/carts', async (req, res) => {
+      const item = req.body;
+      // console.log(item);
+      const result = await cartCollections.insertOne(item);
+      res.send(result);
+    })
+    // get cart result 
+    app.get('/carts', async (req, res) => {
+      const email = req.query.email;
+      // console.log(email);
+      if (!email) {
+        res.send([])
+      }
+      else {
+        const query = { email: email };
+
+        const result = await cartCollections.find(query).toArray();
         res.send(result)
+
+      }
+    });
+
+    // get delete cart item
+    app.delete('/carts/:id',async(req,res)=>{
+      const id = req.params.id;
+      // console.log(id);
+      const query = {_id: new Object(id)}
+      const result = await cartCollections.deleteOne(query)
+      res.send(result);
     })
 
 
@@ -62,10 +95,28 @@ run().catch(console.dir);
 
 
 
-app.get('/',(req,res)=>{
-    res.send("Bistro Boss Sever is Running");
+app.get('/', (req, res) => {
+  res.send("Bistro Boss Sever is Running");
 })
 
-app.listen(port,()=>{
-    console.log(`Bistro boss is running on ${port}`);
+app.listen(port, () => {
+  console.log(`Bistro boss is running on ${port}`);
 })
+
+
+/**
+ * ---------------
+ *  
+ * Naming Convention
+ * 
+ * ------------------
+ * 
+ * users: userCollection
+ * app.get('/users')
+ * app.get('/users/:id')
+ * app.post('/users')
+ * app.patch('/users/:id')
+ * app.put('/users/:id')
+ * app.delete('/users/:id')
+ * 
+ */
