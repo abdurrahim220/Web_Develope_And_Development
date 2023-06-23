@@ -8,6 +8,7 @@ const MyCart = () => {
     const [cart, refetch] = cartMenu();
     const total = (cart.reduce((sum, item) => item.price + sum, 0))
     const handleDelete = (item) => {
+        console.log(item);
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
@@ -18,11 +19,12 @@ const MyCart = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/carts/${item._id}`, {
+                fetch(`http://localhost:5000/carts/${item.itemId}`, {
                     method: 'DELETE',
                 })
                     .then(res => res.json())
                     .then(data => {
+                        console.log(data);
                         if (data.deletedCount > 0) {
                             refetch();
                             Swal.fire(
@@ -86,7 +88,9 @@ const MyCart = () => {
                                     </td>
                                     <td>{item.price}</td>
                                     <th>
+
                                         <button onClick={() => handleDelete(item)} className="btn btn-ghost btn-lg text-white bg-red-500"><FaTrashAlt></FaTrashAlt></button>
+
                                     </th>
                                 </tr>
                             )}

@@ -6,11 +6,14 @@ import { useQuery } from '@tanstack/react-query'
 const cartMenu = () => {
     const { user } = useContext(AuthContext);
 
-    const { isLoading,refetch, isError, data : cart = [] } = useQuery({
+    const token = localStorage.getItem('access-token');
+
+    const { refetch, data : cart = [] } = useQuery({
         queryKey: ['cart', user?.email],
         queryFn: async ()=>{
-            const response = await fetch(`http://localhost:5000/carts?email=${user.email}`)
-            return response.json()
+            const response = await fetch(`carts?email=${user.email}`)
+            console.log('res from axios', response)
+            return response.data;
         },
     })
 

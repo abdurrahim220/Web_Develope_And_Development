@@ -3,6 +3,7 @@ import { loadCaptchaEnginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, val
 import { AuthContext } from '../../providers/AuthProvider';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import SocialLogin from './SocialLogin/SocialLogin';
 
 
 const Login = () => {
@@ -97,6 +98,7 @@ const Login = () => {
                         </div>
                     </form>
                     <p><small>New to Bistro? <Link to='/signUp'>Create an Account!!</Link></small></p>
+                    <SocialLogin></SocialLogin>
                 </div>
             </div>
         </div>
