@@ -1,14 +1,16 @@
 {
-  "name": "mycontact-backend-api",
+  "name": "server-contact-backend",
   "version": "1.0.0",
-  "description": "This is express project for my contacts backend api",
-  "main": "server.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node index.js",
+    "dev":"nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Md Abdur Rahim",
-  "license": "MIT",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
