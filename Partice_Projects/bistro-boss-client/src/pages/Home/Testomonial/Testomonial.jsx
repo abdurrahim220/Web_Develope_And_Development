@@ -18,7 +18,7 @@ const Testomonial = () => {
 
     const [reviews, setReview] = useState([]);
     useEffect(() => {
-        fetch("reviews.json")
+        fetch("http://localhost:5000/review")
             .then(res => res.json())
             .then(data => {
                 setReview(data)
