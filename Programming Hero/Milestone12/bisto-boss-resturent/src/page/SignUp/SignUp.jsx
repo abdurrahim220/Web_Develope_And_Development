@@ -7,7 +7,7 @@ import Swal from 'sweetalert2';
 const SignUp = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const { createUser, updateUserProfile } = useContext(AuthContext);
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
     const onSubmit = data => {
         // console.log(data);
 
@@ -15,7 +15,7 @@ const SignUp = () => {
             .then(result => {
                 const loggedUser = result.user;
 
-                console.log(loggedUser);
+                // console.log(loggedUser);
 
                 updateUserProfile(data.name, data.photoURL)
                     .then(() => {
@@ -40,12 +40,13 @@ const SignUp = () => {
                                         showConfirmButton: false,
                                         timer: 1500
                                     })
+                                    navigate('/')
+                                  
                                 }
                             })
 
 
                         // console.log("Update Profile user info");
-                        // navigate('/login')
                     })
                     .catch(error => {
                         console.log(error);

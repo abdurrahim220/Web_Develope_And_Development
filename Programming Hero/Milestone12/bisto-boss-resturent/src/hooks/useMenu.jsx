@@ -12,6 +12,7 @@ const useMenu = () => {
                 // const popularItems = data.filter(item => item.category === 'popular')
                 setMenu(data);
                 setLoading(false);
+                // console.log(data)
             })
     }, []);
     return [menu,loading];

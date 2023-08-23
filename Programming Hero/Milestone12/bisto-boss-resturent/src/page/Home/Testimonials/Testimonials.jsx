@@ -15,7 +15,7 @@ const Testimonials = () => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/reviews')
+        fetch('http://localhost:5000/review')
             .then(res => res.json())
             .then(data => {
                 setReviews(data)
@@ -24,9 +24,9 @@ const Testimonials = () => {
 
     return (
         <section className='my-5'>
-            <SectionTitle>
-                subHeading = "What our client says"
-                heading='Testimonial'
+            <SectionTitle subHeading="What our client says"
+                heading='Testimonial'>
+
             </SectionTitle>
             <Swiper
                 pagination={{
@@ -36,7 +36,7 @@ const Testimonials = () => {
                 modules={[Pagination, Navigation]}
                 className="mySwiper"
             >
-                
+
                 {
                     reviews.map(review => <SwiperSlide
                         key={review._id}

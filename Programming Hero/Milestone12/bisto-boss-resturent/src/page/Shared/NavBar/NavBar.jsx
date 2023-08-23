@@ -7,7 +7,10 @@ import cartMenu from '../../../hooks/cartMenu';
 
 const NavBar = () => {
     const { user, LogOut } = useContext(AuthContext);
-    const [cart] = cartMenu();
+    const [carts] = cartMenu();
+    
+    console.log(carts)
+
     const handleLogout = () => {
         LogOut()
             .then(result => {
@@ -18,18 +21,16 @@ const NavBar = () => {
             })
     }
 
- 
-
 
     const navItem = <>
         <li><Link to='/'>Home</Link></li>
-        <li><Link to='/menu'>Menu</Link></li>
+        <li><Link to='/menu'>Our Menu</Link></li>
         <li><Link to='/order/salad'>Order</Link></li>
         <li>
             <Link to='/dashboard/myCart'>
                 <button class="btn">
                     <FaShoppingCart></FaShoppingCart>
-                    <div class="badge badge-secondary">+{cart?.length}</div>
+                    <div class="badge badge-secondary">+{carts?.length}</div>
                 </button>
             </Link>
         </li>

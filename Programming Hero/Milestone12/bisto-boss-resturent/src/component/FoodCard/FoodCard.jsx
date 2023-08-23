@@ -12,7 +12,7 @@ const FoodCard = ({ item }) => {
     const navigate = useNavigate();
 
     const handleAddToCart = (item) => {
-        console.log(item);
+        // console.log(item);
 
         if (user && user.email) {
             const cartItem = { itemId: _id, name, image, price, email: user.email }
@@ -24,12 +24,14 @@ const FoodCard = ({ item }) => {
                 body: JSON.stringify(cartItem)
 
             }).then(res => res.json()).then(data => {
-                refetch(); // refetch cart to update the number of cart
+                 // refetch cart to update the number of cart
+               
                 if (data.insertedId) {
+                    refetch();
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
-                        title: 'Your work has been saved',
+                        title: 'Your food added on the card',
                         showConfirmButton: false,
                         timer: 1500
                     })

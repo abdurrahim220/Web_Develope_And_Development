@@ -19,12 +19,12 @@ const MyCart = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/carts/${item.itemId}`, {
+                fetch(`http://localhost:5000/carts/${item._id}`, {
                     method: 'DELETE',
                 })
                     .then(res => res.json())
                     .then(data => {
-                        console.log(data);
+                        // console.log(data);
                         if (data.deletedCount > 0) {
                             refetch();
                             Swal.fire(
@@ -38,7 +38,7 @@ const MyCart = () => {
         })
     }
     return (
-        <div >
+        <div className='w-full'>
             <Helmet>
                 <title>
                     Bistro Boss | Dashboard
@@ -46,13 +46,15 @@ const MyCart = () => {
             </Helmet>
 
 
-            <div className='uppercase font-semibold h-10 flex justify-evenly'>
-                <h3 className='text-3xl'>Total Item : {cart.length}</h3>
-                <h3 className='text-3xl'>Total Price : ${total}</h3>
-                <div className="btn btn-warning">Pay</div>
+            <div className='uppercase font-semibold h-[60px] items-center flex justify-evenly'>
+
+                <h3 className='text-2xl'>Total Item : {cart.length}</h3>
+                <h3 className='text-2xl'>Total Price : ${total}</h3>
+                <button className="btn btn-warning btn-sm">Pay</button>
+
             </div>
             <div >
-                <div className="overflow-x-auto">
+                <div className="overflow-x-auto w-full">
                     <table className="table">
                         {/* head */}
                         <thead>

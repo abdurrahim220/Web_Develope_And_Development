@@ -41,17 +41,6 @@ const Order = () => {
 
                 </TabList>
 
-                {/* <TabPanel>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-5 my-5">
-                        {
-                            salad.map(item => <FoodCard
-                                key={item._id}
-                                item={item}
-                            ></FoodCard>)
-                        }
-                    </div>
-                </TabPanel> */}
-
                 <TabPanel>
                     <OrderTab item={salad}></OrderTab>
                 </TabPanel>
