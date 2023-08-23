@@ -2,7 +2,7 @@
 const express = require("express");
 const app = express();
 require('dotenv').config()
-
+var jwt = require('jsonwebtoken');
 const cors = require('cors');
 
 
@@ -36,10 +36,42 @@ async function run() {
         const reviewCollection = client.db("bistroBoss").collection("reviews");
         const cartCollection = client.db("bistroBoss").collection("carts");
 
+        // jwt token
 
-        app.post('/users',async (req,res) =>{
+        app.post('/jwt', (req, res) => {
             const user = req.body;
+            const token = jwt.sign(user, env.process.ACCESS_TOKEN_SECRET, 'secret', { expiresIn: '1h' })
+            res.send({ token })
+        })
+
+        // user related api
+        app.get('/users', async (req, res) => {
+            const result = await usersCollection.find().toArray();
+            res.send(result);
+        })
+
+        app.post('/users', async (req, res) => {
+            const user = req.body;
+            const query = { email: user.email }
+            const existingUser = await usersCollection.findOne(query);
+            if (existingUser) {
+                return res.send({ message: "user already exists" })
+            }
             const result = await usersCollection.insertOne(user);
+            res.send(result)
+        })
+
+        app.patch('/users/admin/:id', async (req, res) => {
+            const id = req.params.id;
+            // console.log(id)
+            const filter = { _id: new ObjectId(id) }
+            const updateDoc = {
+                $set: {
+                    role: `admin`
+                },
+            };
+
+            const result = await usersCollection.updateOne(filter, updateDoc)
             res.send(result)
         })
 
@@ -74,9 +106,9 @@ async function run() {
 
         // delete operation 
 
-        app.delete('/carts/:id',async(req,res)=>{
+        app.delete('/carts/:id', async (req, res) => {
             const id = req.params.id;
-            const query = {_id : new ObjectId(id)}
+            const query = { _id: new ObjectId(id) }
             const result = await cartCollection.deleteOne(query)
             res.send(result)
         })

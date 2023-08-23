@@ -7,8 +7,7 @@ const Dashboard = () => {
     const [cart] = cartMenu();
 
     //todo:load data from the server to have dynamic isAdmin based on data
-
-    const isAdmin = false;
+    const isAdmin = true;
 
     return (
         <div className="drawer drawer-mobile ">
