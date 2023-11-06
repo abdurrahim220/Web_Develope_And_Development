@@ -13,6 +13,8 @@ app.use(express.json());
 
 console.log();
 
+DB_USER=car-doctor-server;
+DB_PASS=ybdPocPYECi1lvtM
 
 
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.hncbqqn.mongodb.net/?retryWrites=true&w=majority`;
