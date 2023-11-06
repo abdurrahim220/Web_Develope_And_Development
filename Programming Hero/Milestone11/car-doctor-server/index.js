@@ -11,12 +11,6 @@ const port = process.env.PORT || 5000;
 app.use(cors())
 app.use(express.json());
 
-console.log();
-
-DB_USER=car-doctor-server;
-DB_PASS=ybdPocPYECi1lvtM
-
-
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.hncbqqn.mongodb.net/?retryWrites=true&w=majority`;
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
@@ -29,18 +23,17 @@ const client = new MongoClient(uri, {
 });
 
 const verifyJWT = (req, res, next) => {
-    console.log('Hitting verify jwt');
-    console.log(req.headers.authorization);
-
+    // console.log('Hitting verify jwt');
+    // console.log(req.headers.authorization);
     const authorization = req.headers.authorization;
     if (!authorization) {
         return res.status(401).send({ error: true, message: 'unauthorized access' })
     }
     const token = authorization.split(' ')[1];
-    console.log('token inside verify jwt', token);
+    // console.log('token inside verify jwt', token);
     jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (error, decode) => {
         if (error) {
-            return res.send({ error: true, message: 'unauthorize access' })
+            return res.status(403).send({ error: true, message: 'unauthorize access' })
         }
         req.decode = decode;
         next();
@@ -61,10 +54,10 @@ async function run() {
         // jwt
         app.post('/jwt', (req, res) => {
             const user = req.body;
-            console.log(user);
+            // console.log(user);
             const token = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '1h' });
-            console.log(token);
-            res.send({ token })
+            // console.log(token);
+            res.send({token})
         })
 
         // all services related data in here
@@ -97,7 +90,7 @@ async function run() {
         // get the data form server to show on client with sort or query
         app.get('/bookings', verifyJWT, async (req, res) => {
             // console.log(req.headers.authorization);
-            decode=req.decode;
+           const decode=req.decode;
             console.log(decode);
             if(decode.email !== req.query.email){
                 return res.status(403).send({error:1,message:'forbidden access'})
@@ -110,6 +103,18 @@ async function run() {
             const result = await bookingCollection.find(query).toArray();
             res.send(result)
         })
+
+        /*
+        app.get('/bookings',async(req,res)=>{
+            console.log(req.query.email)
+            let query = {};
+            if(req.query?.email){
+                query = {email:req.query.email}
+            }
+           const result = await bookingCollection.find(query).toArray();
+            res.send(result)
+        })
+        */
 
         //delete 
         app.delete('/bookings/:id', async (req, res) => {
