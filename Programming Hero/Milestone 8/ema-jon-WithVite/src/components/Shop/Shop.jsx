@@ -14,7 +14,7 @@ const Shop = () => {
 
     // load data
     useEffect(() => {
-        fetch('products.json').then(res => res.json()).then(data => setProducts(data))
+        fetch('http://localhost:5000/products').then(res => res.json()).then(data => setProducts(data))
     }, []);
     useEffect(() => {
         const storedCart = getShoppingCart();
@@ -60,7 +60,7 @@ const Shop = () => {
             <div className='product-container'>
                 {
                     products.map(product => <Product
-                        key={product.id}
+                        key={product._id}
                         product={product}
                         handleAddToCart={handleAddToCart}
                     ></Product>)

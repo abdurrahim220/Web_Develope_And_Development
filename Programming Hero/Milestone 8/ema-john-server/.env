@@ -1,0 +1,2 @@
+DB_USER=ema_john
+DB_PASS=92VyRHVhtae5Ivs7

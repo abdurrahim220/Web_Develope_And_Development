@@ -2,12 +2,13 @@ import { FaBook, FaCalendarAlt, FaHome, FaShoppingCart, FaUsers, FaUtensils, FaW
 import { HiMenu, HiShoppingBag } from "react-icons/hi"
 import { Link, NavLink, Outlet } from "react-router-dom";
 import cartMenu from "../hooks/cartMenu";
+import useAdmin from "../hooks/useAdmin";
 
 const Dashboard = () => {
     const [cart] = cartMenu();
 
     //todo:load data from the server to have dynamic isAdmin based on data
-    const isAdmin = true;
+    const[ isAdmin] = useAdmin();
 
     return (
         <div className="drawer drawer-mobile ">

@@ -8,7 +8,7 @@ import useAxiosSecure from '../../../hooks/useAxiosSecure';
 const AllUsers = () => {
     const [axiosSecure] = useAxiosSecure()
     const { data: users = [], refetch } = useQuery(['users'], async () => {
-        const res = await axiosSecure('/users')
+        const res = await axiosSecure.get('/users')
         return res.data;
     })
 
@@ -25,7 +25,7 @@ const AllUsers = () => {
                 res => res.json()
             )
             .then(data => {
-                console.log(data);
+               // console.log(data);
                 if (data.modifiedCount > 0) {
                     refetch();
                     Swal.fire({

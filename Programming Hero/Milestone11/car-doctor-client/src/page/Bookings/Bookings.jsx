@@ -1,35 +1,20 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../provider/AuthProvider';
 import BookingRow from './BookingRow';
-import { useNavigate } from 'react-router-dom';
+
+import useAxiosSecure from '../../hooks/useAxiosSecure';
 
 const Bookings = () => {
     const { user } = useContext(AuthContext);
     const [bookings, setBooking] = useState([]);
-    const navigate = useNavigate()
+    const axiosSecure = useAxiosSecure();
 
-    const url = `http://localhost:5000/bookings?email=${user?.email}`;
-
+    const url = `/bookings?email=${user?.email}`;
     useEffect(() => {
-        fetch(url, {
-            method: 'GET',
-            headers: {
-                authorization: `Beazer ${localStorage.getItem('car-access-token')}`
-            }
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                if (!data.error) {
-                    setBooking(data);
-                }
-                else {
-                    // logout and then navigate
-                    navigate('/')
-                }
+        axiosSecure.get(url)
+        .then(res => setBooking(res.data))
 
-            })
-    }, [url,navigate]);
+    }, [url, axiosSecure]);
 
     const handleDelete = (id) => {
         const processed = confirm('Are you sure you want to delete')

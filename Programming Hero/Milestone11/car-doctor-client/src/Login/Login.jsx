@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import loginlogo from '../assets/images/login/login.svg'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
+import SocialLogin from '../page/Shared/SocialLogin/SocialLogin';
 
 const Login = () => {
     const { login } = useContext(AuthContext)
@@ -17,33 +18,31 @@ const Login = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
+        // console.log(email, password);
 
         login(email, password)
             .then(result => {
                 const user = result.user;
                 // console.log(user);
-                // navigate(from, { replace: true })
-                const loggedUser = {
-                    email: user.email
-                }
-                console.log(loggedUser);
-                fetch(`http://localhost:5000/jwt`, {
-                    method: 'POST',
-                    headers: {
-                        'content-type': 'application/json'
-                    },
-                    body: JSON.stringify(loggedUser)
+                navigate(from, { replace: true })
+                // const loggedUser = {
+                //     email: user.email
+                // }
+                // console.log(loggedUser);
+                // fetch(`http://localhost:5000/jwt`, {
+                //     method: 'POST',
+                //     headers: {
+                //         'content-type': 'application/json'
+                //     },
+                //     body: JSON.stringify(loggedUser)
 
-                })
-                    .then(res => res.json())
-                    .then(data => {
-                        console.log('jwt response', data);
-                        //! Warning : Local storage is the second best place to store to access token
-                        localStorage.setItem('car-access-token',data.token)
-                         navigate(from, { replace: true })
-                         
-                    })
+                // })
+                //     .then(res => res.json())
+                //     .then(data => {
+                //         console.log('jwt response', data);
+                //         //! Warning : Local storage is the second best place to store to access token
+                //         localStorage.setItem('car-access-token',data.token)
+                //     })
 
 
             })
@@ -86,6 +85,8 @@ const Login = () => {
                                 <input className="btn btn-primary" type="submit" value="Login" />
                             </div>
                         </form>
+
+                        <SocialLogin/>
 
                         <p>New to Cars Doctor<Link to='/signUp' className='text-red-600'> Sign Up</Link></p>
 
